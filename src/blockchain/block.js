@@ -6,6 +6,11 @@ class Block {
     this.data = data;
   }
 
+  static get genesis() {
+    const timestamp = (new Date(2000, 0, 1)).getTime();
+    return new this(timestamp, undefined, 'g3n3515-h45h', 'lucho ducho');
+  }
+
   toString() {
     const {
       timestamp, previousHash, hash, data,
@@ -13,10 +18,11 @@ class Block {
 
     return `Block - 
         timestamp       : ${timestamp}
-        prreviousHash   : ${previousHash}
+        previousHash    : ${previousHash}
         hash            : ${hash}
         data            : ${data}
-    `; 
+    `;
+  }
 }
 
 export default Block;
